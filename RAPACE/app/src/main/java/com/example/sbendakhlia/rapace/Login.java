@@ -71,7 +71,7 @@ public class Login extends Activity {
         }
         else
         {
-
+            loginButton.setVisibility(View.GONE);
             mAuth.signInWithEmailAndPassword(login,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -113,7 +113,11 @@ public class Login extends Activity {
                             ShowMessage("User not found!");
                         }*/
                             ShowMessage("User logged in!");
-                        }
+                        } else {
+                        ShowMessage("User not found!");
+                        loginButton.setVisibility(View.VISIBLE);
+
+                    }
                 }
             });
         }
