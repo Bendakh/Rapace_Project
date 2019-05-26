@@ -1,5 +1,6 @@
 package com.example.sbendakhlia.rapace;
 
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -23,8 +24,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserManagement extends AppCompatActivity implements AttributeLocalsFragment.OnFragmentInteractionListener {
 
+    AttributeLocalsFragment mFrag;
     Button addUserButton;
     Button attribuerLocalButton;
+    Button doneBtn;
     //LinearLayout ll;
     //EditText userName;
 
@@ -46,6 +49,8 @@ public class UserManagement extends AppCompatActivity implements AttributeLocals
 
         addUserButton = findViewById(R.id.add_a_user_button);
         attribuerLocalButton = findViewById(R.id.attribuer_locaux_button);
+        doneBtn = findViewById(R.id.close_attribute_fragment_button);
+        doneBtn.setVisibility(View.INVISIBLE);
         //ll = findViewById(R.id.new_user_interface);
         //userName = findViewById(R.id.user_name);
 
@@ -63,15 +68,30 @@ public class UserManagement extends AppCompatActivity implements AttributeLocals
                 DisplayUserAdd();
                 addUserButton.setVisibility(View.INVISIBLE);
                 attribuerLocalButton.setVisibility(View.INVISIBLE);
+
             }
         });
+
+
 
         attribuerLocalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container_user_management, new AttributeLocalsFragment()).commit();
+                mFrag = new AttributeLocalsFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container_user_management, mFrag).commit();
                 addUserButton.setVisibility(View.INVISIBLE);
                 attribuerLocalButton.setVisibility(View.INVISIBLE);
+                doneBtn.setVisibility(View.VISIBLE);
+            }
+        });
+
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().remove(mFrag).commit();
+                addUserButton.setVisibility(View.VISIBLE);
+                attribuerLocalButton.setVisibility(View.VISIBLE);
+                doneBtn.setVisibility(View.INVISIBLE);
             }
         });
         /*userConfirm.setOnClickListener(new View.OnClickListener() {

@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -18,6 +19,7 @@ public class User {
     private int nDays;
     private String name;
     private String password;
+
 
 
     public enum AlertModes

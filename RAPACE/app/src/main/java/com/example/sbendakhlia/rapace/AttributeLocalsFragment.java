@@ -45,13 +45,13 @@ public class AttributeLocalsFragment extends Fragment {
     private String mParam2;
 
     Button attributeBtn;
-    Button doneBtn;
+
     Spinner localsSpinner;
     Spinner usersSpinner;
 
-    private ArrayList<Local> locaux;
+    private ArrayList<Integer> locaux;
     private ArrayList<String> locauxNames;
-    private ArrayList<User> users;
+    private ArrayList<String> users;
     private ArrayList<String> usersNames;
     ArrayAdapter<String> adapterLocals;
     ArrayAdapter<String> adapterUsers;
@@ -100,8 +100,8 @@ public class AttributeLocalsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        attributeBtn = view.findViewById(R.id.attribuer_locaux_button);
-        doneBtn = view.findViewById(R.id.return_to_user_management_button);
+        attributeBtn = view.findViewById(R.id.attribute_local_btn);
+
         localsSpinner = view.findViewById(R.id.locaux_spinner);
         usersSpinner = view.findViewById(R.id.users_spinner);
 
@@ -110,6 +110,7 @@ public class AttributeLocalsFragment extends Fragment {
 
         //Locaux spinner
         locauxNames = new ArrayList<>();
+        locaux = new ArrayList<>();
         adapterLocals = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, locauxNames);
         adapterLocals.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         localsSpinner.setAdapter(adapterLocals);
@@ -123,6 +124,7 @@ public class AttributeLocalsFragment extends Fragment {
 
                     //locaux.add(tmpLocal);
                     locauxNames.add(tmpLocal.GetNom());
+                    locaux.add(tmpLocal.GetId());
                     adapterLocals.notifyDataSetChanged();
             }
 
@@ -152,6 +154,7 @@ public class AttributeLocalsFragment extends Fragment {
 
         //Users spinner
         usersNames = new ArrayList<>();
+        users = new ArrayList<>();
         adapterUsers = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, usersNames);
         adapterUsers.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         usersSpinner.setAdapter(adapterUsers);
@@ -164,6 +167,7 @@ public class AttributeLocalsFragment extends Fragment {
 
                 //locaux.add(tmpLocal);
                 usersNames.add(tmpUser.getEmail());
+                users.add(tmpUser.getId());
                 adapterUsers.notifyDataSetChanged();
             }
 
@@ -188,7 +192,15 @@ public class AttributeLocalsFragment extends Fragment {
             }
         });
 
-
+        attributeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userID = users.get((int)usersSpinner.getSelectedItemId());
+                int localID = locaux.get((int)localsSpinner.getSelectedItemId());
+                Log.e("Pleasework", userID + " " + localID);
+                FirebaseDatabase.getInstance().getReference("Users").child(userID).child("local").child("local_" + localID).setValue(localID);
+            }
+        });
 
 
     }

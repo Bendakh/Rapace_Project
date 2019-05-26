@@ -38,4 +38,5 @@ public class Local {
     {
         return this.nom;
     }
+    public int GetId() {return this.id;}
 }

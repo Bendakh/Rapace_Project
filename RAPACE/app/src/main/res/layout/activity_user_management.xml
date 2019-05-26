@@ -28,6 +28,11 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/close_attribute_fragment_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Done" />
     <!--<LinearLayout
         android:id="@+id/new_user_interface"
         android:layout_width="match_parent"
