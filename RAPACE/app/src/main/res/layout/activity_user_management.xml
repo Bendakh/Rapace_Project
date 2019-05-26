@@ -13,6 +13,21 @@
         android:layout_height="wrap_content"
         android:text="Add a User"/>
 
+    <Button
+        android:id="@+id/attribuer_locaux_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attribute locals"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/frag_container_user_management"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+    </LinearLayout>
+
     <!--<LinearLayout
         android:id="@+id/new_user_interface"
         android:layout_width="match_parent"

@@ -6,9 +6,17 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/visualisation"
             android:title="Visualisation des locaux"/>
+        <item android:id="@+id/visualisation_image"
+            android:title="Visualisation des images"/>
         <item android:id="@+id/appel"
             android:title="Appel téléphonique"/>
+        <item android:id="@+id/decl_alarm"
+            android:title="Déclencher une alarme"/>
+        <item android:id="@+id/activer_sys"
+            android:title="Activer un système de sécurité"/>
         <item android:id="@+id/affichage_map"
             android:title="Affichage sur une carte"/>
+        <item android:id="@+id/retour_main_activity"
+            android:title="Retour arrière"/>
     </group>
 </menu>

@@ -2,6 +2,7 @@ package com.example.sbendakhlia.rapace;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,9 +21,10 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class UserManagement extends AppCompatActivity {
+public class UserManagement extends AppCompatActivity implements AttributeLocalsFragment.OnFragmentInteractionListener {
 
     Button addUserButton;
+    Button attribuerLocalButton;
     //LinearLayout ll;
     //EditText userName;
 
@@ -43,6 +45,7 @@ public class UserManagement extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         addUserButton = findViewById(R.id.add_a_user_button);
+        attribuerLocalButton = findViewById(R.id.attribuer_locaux_button);
         //ll = findViewById(R.id.new_user_interface);
         //userName = findViewById(R.id.user_name);
 
@@ -59,6 +62,16 @@ public class UserManagement extends AppCompatActivity {
                 //ll.setVisibility(View.VISIBLE);
                 DisplayUserAdd();
                 addUserButton.setVisibility(View.INVISIBLE);
+                attribuerLocalButton.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        attribuerLocalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container_user_management, new AttributeLocalsFragment()).commit();
+                addUserButton.setVisibility(View.INVISIBLE);
+                attribuerLocalButton.setVisibility(View.INVISIBLE);
             }
         });
         /*userConfirm.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +122,7 @@ public class UserManagement extends AppCompatActivity {
                             //ll.setVisibility(View.INVISIBLE);
 
                             addUserButton.setVisibility(View.VISIBLE);
+                            attribuerLocalButton.setVisibility(View.VISIBLE);
                         }
 
                         @Override
@@ -180,5 +194,10 @@ public class UserManagement extends AppCompatActivity {
             }
         });
         alertDialog.show();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

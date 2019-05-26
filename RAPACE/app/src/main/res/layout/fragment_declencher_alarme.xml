@@ -4,24 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AppelFragment">
+    tools:context=".DeclencherAlarmeFragment">
 
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Appel fragment" />
-
-    <EditText
-        android:id="@+id/phone_number"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"/>
+        android:text="Déclencher une alarme dans le local"
+        android:layout_gravity="center"/>
 
     <Button
+        android:id="@+id/decl_alarm_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Call"
-        android:id="@+id/call_button"/>
+        android:text="Trigger Alarm!" />
+
+
+
 
 </LinearLayout>

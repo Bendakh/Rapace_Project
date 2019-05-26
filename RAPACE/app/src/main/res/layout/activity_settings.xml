@@ -12,22 +12,51 @@
         android:id="@+id/email_change_field"
         android:layout_width="200dp"
         android:layout_height="20dp"
+        android:layout_above="@+id/change_email_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="25dp"
         android:background="#11000000"
         android:ems="10"
         android:hint="email"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/change_email_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Email"/>
+        android:layout_above="@+id/password_change_field"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="25dp"
+        android:text="Change Email" />
 
     <EditText
         android:id="@+id/password_change_field"
         android:layout_width="200dp"
         android:layout_height="20dp"
-        android:layout_centerInParent="true"
+        android:layout_above="@+id/change_password_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="25dp"
         android:background="#11000000"
         android:ems="10"
         android:hint="Password"
@@ -37,13 +66,33 @@
         android:id="@+id/change_password_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change password"/>
+        android:layout_above="@+id/change_ndays_field"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="25dp"
+        android:text="Change password" />
 
     <EditText
         android:id="@+id/change_ndays_field"
         android:layout_width="200dp"
         android:layout_height="20dp"
-        android:layout_centerInParent="true"
+        android:layout_above="@+id/change_ndays_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="105dp"
+        android:layout_marginBottom="25dp"
         android:background="#11000000"
         android:ems="10"
         android:hint="Days before password change"
@@ -53,21 +102,69 @@
         android:id="@+id/change_ndays_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change number of days"/>
+
+        android:layout_above="@+id/alert_modes"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="25dp"
+        android:text="Change number of days" />
 
     <Spinner
         android:id="@+id/alert_modes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        ></Spinner>
+        android:layout_above="@+id/change_alert_modes_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginRight="181dp"
+        android:layout_marginBottom="150dp"></Spinner>
 
     <Button
         android:id="@+id/change_alert_modes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change alert mode"/>
+        android:layout_alignEnd="@+id/change_ndays_button"
+        android:layout_alignRight="@+id/change_ndays_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="121dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="50dp"
+        android:text="Change alert mode" />
 
-
+    <TextView
+        android:id="@+id/params_text"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:fontFamily="sans-serif"
+        android:text="Paramètres"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

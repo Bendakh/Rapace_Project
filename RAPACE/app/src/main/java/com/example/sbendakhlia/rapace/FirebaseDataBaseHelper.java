@@ -1,16 +1,20 @@
 package com.example.sbendakhlia.rapace;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.sbendakhlia.rapace.ForFireBase.Local;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,7 +25,8 @@ import static android.content.ContentValues.TAG;
 public class FirebaseDataBaseHelper {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceUsers;
-    private List<User> users = new ArrayList<>();
+    private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<Local> locaux = new ArrayList<>();
     User user;
 
     public interface DataStatus {
@@ -44,6 +49,83 @@ public class FirebaseDataBaseHelper {
         mDatabase = FirebaseDatabase.getInstance();
         mReferenceUsers = mDatabase.getReference("Users");
 
+    }
+
+    public ArrayList<Local> GetLocalList()
+    {
+        return this.locaux;
+    }
+
+    public ArrayList<User> GetUserList()
+    {
+        return this.users;
+    }
+
+    public void GetLocals(final FirebaseSuccessListener fb)
+    {
+        DatabaseReference locauxDB = mDatabase.getReference("locaux");
+        locauxDB.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Local tempLocal = dataSnapshot.getValue(Local.class);
+                locaux.add(tempLocal);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    public void GetUsers(final FirebaseSuccessListener fb)
+    {
+        mReferenceUsers.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                User tempUser = dataSnapshot.getValue(User.class);
+
+                users.add(tempUser);
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public User GetUser(final String uid, final FirebaseSuccessListener fb) {
