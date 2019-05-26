@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="10dp">
+    app:cardElevation="10dp"
+    android:background="#E3DEDB">
 
     <LinearLayout
         android:id="@+id/new_user_personalise"
