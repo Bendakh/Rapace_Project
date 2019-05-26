@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"/>
+
+    <Button
+        android:id="@+id/users_management_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Users management"/>
+
+    <Button
+        android:id="@+id/go_to_alertTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alert test"/>
+
+    <Button
+        android:id="@+id/go_to_Local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allez sur les locauxx"/>
+
+    <Button
+        android:id="@+id/go_to_AlertPrecedent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allez sur les alertes précédentes"/>
+
+    <!--<LinearLayout
+        android:id="@+id/new_user_personalise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/user_name_pers"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:background="#11000000"
+            android:hint="Login"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/user_mail_pers"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:background="#11000000"
+            android:hint="E-mail"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/user_password_pers"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:background="#11000000"
+            android:hint="Password"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/confirm_user_pers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm"/>
+
+    </LinearLayout>-->
+
+
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="532dp"
+        android:layout_above="@+id/btn_play_pause"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <ImageButton
+        android:id="@+id/btn_play_pause"
+        android:src="@drawable/ic_play"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/image_descr" />
+
+
+
+</LinearLayout>

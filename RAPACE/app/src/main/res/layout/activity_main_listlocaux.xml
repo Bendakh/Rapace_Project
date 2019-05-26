@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivityLocaux">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/locaux_surveill_s"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35pt"
+        >
+
+        <ListView
+            android:id="@+id/listLocaux"
+            android:layout_width="match_parent"
+            android:layout_height="557dp">
+
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>-->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+>
+
+<TextView
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:text="@string/locaux_surveill_s"
+    android:textSize="40sp" />
+
+    <LinearLayout
+        android:id="@+id/titleLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGPS">
+        <TextView
+            android:id="@+id/lName"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:text="@string/nom" />
+        <TextView
+            android:id="@+id/lZone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/zone" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnGPS"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:src="@drawable/ic_action_name"
+        android:layout_below="@id/title"
+        />
+
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/titleLoc"
+   android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/list_locaux"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+</RelativeLayout>

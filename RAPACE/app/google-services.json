@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "505293490475",
+    "firebase_url": "https://rapace-2087a.firebaseio.com",
+    "project_id": "rapace-2087a",
+    "storage_bucket": "rapace-2087a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505293490475:android:a6ae9603365315c6",
+        "android_client_info": {
+          "package_name": "com.example.sbendakhlia.rapace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505293490475-so7uc5cjahbmar6t9b71tt9moo5tpgk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq-fNPUvQW5wr7th0Ttn8Fe6DN4RXEMrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505293490475-so7uc5cjahbmar6t9b71tt9moo5tpgk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/lName"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:text="@string/nom"
+        android:textSize="26sp"
+        android:gravity="center"/>
+
+  <!--  <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Visualisation du local"
+        android:layout_gravity="center"/> -->
+   <!-- <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text=""
+        android:layout_gravity="center"/> -->
+   <!-- <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/liste_des_options_disponibles_pour_ce_local"
+                android:layout_marginBottom="0dp"/>
+            <ListView
+                android:id="@+id/historique_enregistrement"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:layout_marginBottom="20sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/liste_des_v_nements"
+                android:layout_marginBottom="0dp"/>
+            <ListView
+                android:id="@+id/liste_evenement"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:layout_marginBottom="20sp"/>
+            <!-- Pour les utilisateurs augmentés -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Liste des visualisations"
+                android:id="@+id/textVisu"
+                android:layout_marginBottom="0dp"/>
+
+            <ListView
+                android:id="@+id/historique_visualisation"
+                android:layout_width="fill_parent"
+                android:layout_height="172dp" />
+        </LinearLayout>
+   <!-- </ScrollView>-->
+
+
+
+</LinearLayout>

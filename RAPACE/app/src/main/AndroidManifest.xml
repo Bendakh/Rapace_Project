@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sbendakhlia.rapace">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Activities.LocauxLocation"
+            android:label="@string/title_activity_locaux_location"></activity>
+        <activity
+            android:name=".Activities.LocalMenuActivity"></activity>
+        <activity
+            android:name=".Activities.AlertePrecedente"></activity>
+        <activity
+            android:name=".Activities.AlerteMenuActivity"></activity>
+
+        <activity android:name=".Activities.MainActivityLocaux">
+        </activity>
+
+
+
+
+        <activity android:name=".NotifAction"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AlertTest" />
+        <activity android:name=".UserManagement" />
+        <activity android:name=".PasswordChange" />
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login" />
+    </application>
+
+</manifest>
