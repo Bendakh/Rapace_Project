@@ -46,10 +46,9 @@ public class Register extends Activity {
         mail_reg = findViewById(R.id.mail_reg);
         password_reg = findViewById(R.id.password_reg);
         password_confirm = findViewById(R.id.password_confirm);
-        loadingProgress = findViewById(R.id.loading_progress);
+
         goToLoginButton = findViewById(R.id.go_to_login_button);
 
-        loadingProgress.setVisibility(View.INVISIBLE);
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
 
@@ -59,7 +58,6 @@ public class Register extends Activity {
             @Override
             public void onClick(View view) {
                 regBtn.setVisibility(View.INVISIBLE);
-                loadingProgress.setVisibility(View.INVISIBLE);
                 final String nameString = name_reg.getText().toString();
                 final String emailString = mail_reg.getText().toString();
                 final String passwordString = password_reg.getText().toString();
@@ -71,7 +69,6 @@ public class Register extends Activity {
                     //Afficher un message d'erreur
                     ShowMessage("Please verify all fields!");
                     regBtn.setVisibility(View.VISIBLE);
-                    loadingProgress.setVisibility(View.INVISIBLE);
                 }
                 else
                 {
@@ -132,7 +129,6 @@ public class Register extends Activity {
                 {
                     ShowMessage("Error " + task.getException().getMessage());
                     regBtn.setVisibility(View.VISIBLE);
-                    loadingProgress.setVisibility(View.INVISIBLE);
                 }
             }
         });
