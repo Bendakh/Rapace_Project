@@ -20,7 +20,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.sbendakhlia.rapace.ForFireBase.Alerte;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Random;
 
 public class AlertTest extends AppCompatActivity {
 
@@ -97,8 +101,20 @@ public class AlertTest extends AppCompatActivity {
             mBuilder.setChannelId("com.example.sbendakhlia.rapace");
         }*/
 
+        // Exemple d'alerte
         Intent intent = new Intent(AlertTest.this, NotifAction.class);
         intent.putExtra("notificationID", 111);
+    /*    intent.putExtra("local", 5);
+        intent.putExtra("date", System.currentTimeMillis());
+        intent.putExtra("extras", "Une intrusion dans le jardin !");
+        intent.putExtra("action", "Aucune action prise pour le moment");*/
+
+        // On enregistre l'alerte par exemple
+        // On pourrait changer après
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        int idAlerte = new Random().nextInt();
+        database.getReference("local_5").child("evenement").child(Integer.toString(idAlerte)).setValue(new Alerte(idAlerte, 0, "Une intrusion dans le jardin !", System.currentTimeMillis(), "Aucune action prise pour le moment", "http://93.113.206.174/assets/v1.png"));
+
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(NotifAction.class);
