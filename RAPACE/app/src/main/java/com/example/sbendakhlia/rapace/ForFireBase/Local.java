@@ -33,4 +33,9 @@ public class Local {
         this.uId = uId;
         this.admin = admin;
     }
+
+    public String GetNom()
+    {
+        return this.nom;
+    }
 }
